@@ -39,8 +39,18 @@ def put_api(id=None):
     data=r.json()
     print('data',data)
 
+def delete_api(id=None):
+    data={}
+    if id is not None:
+        data={'id':id}
+    json_data=json.dumps(data)
+    r = requests.get(url=_URL,data=json_data)
+    data=r.json()
+    print('data',data)
+
 
 # calling fun
 get_api()
 post_api()
 put_api()
+delete_api()
